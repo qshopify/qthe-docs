@@ -1,0 +1,39 @@
+---
+title: "FAQ, newsletter, countdown and custom liquid"
+description: "Answer questions, collect signups, count down to a real event, and add your own code."
+updated: 2026-10-09
+---
+import SettingsTable from '../../../components/SettingsTable.astro';
+import Callout from '../../../components/Callout.astro';
+
+## FAQ
+
+Questions and answers as an accordion. The **Help center** layout adds search and groups questions by **Topic**. Answers are added to your page's structured data so search engines can show them.
+
+<SettingsTable section="faq" />
+
+## Newsletter
+
+A signup form that adds subscribers to your Shopify customer list with email marketing consent. Only one signup form shows per page — when this section is on a page, the footer's signup form hides itself.
+
+<SettingsTable section="newsletter" />
+
+## Countdown
+
+Count down to a real date and time — a launch, the end of a sale, a holiday shipping cut-off. Set **Ends at** in your store's time zone and choose what happens **When the countdown ends**.
+
+<Callout type="warning" title="Only for real deadlines">
+Don't use a countdown for a deadline that resets or doesn't exist. Fake urgency misleads shoppers and breaks Shopify's rules.
+</Callout>
+
+<SettingsTable section="countdown" />
+
+## Custom liquid
+
+Add Liquid, HTML or an app's snippet anywhere sections are supported. A **Custom liquid** block is also available on the product page and in the featured product section.
+
+<SettingsTable section="custom-liquid" />
+
+<Callout type="note" title="We can't support custom code">
+Code you add here isn't covered by theme support. If something breaks, remove the section to check whether it's the cause.
+</Callout>

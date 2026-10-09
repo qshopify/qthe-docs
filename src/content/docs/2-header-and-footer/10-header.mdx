@@ -1,0 +1,45 @@
+---
+title: "Header and navigation"
+description: "Logo, header layouts, mega navigation images, search, sticky behavior and the transparent header."
+updated: 2026-10-09
+---
+import SettingsTable from '../../../components/SettingsTable.astro';
+import Callout from '../../../components/Callout.astro';
+
+The header holds your logo, main menu, search, the account component and the cart. Open it from the **Header** group in the theme editor.
+
+## Logo
+
+Upload your logo under **Logo image**. Any shape works — wide wordmarks and tall marks alike — and **Logo width** sets its size on desktop. Without an image, the header shows your store name in the heading font.
+
+## Layout
+
+- **Logo center, navigation left** — an editorial layout with the menu on the left and icons on the right.
+- **Logo left, navigation center** — a classic layout for larger menus.
+
+Turn on **Show search field** to replace the search icon with an inline search field on desktop.
+
+## Menus and mega navigation
+
+The header uses the menu chosen in **Main menu** — by default your store's *Main menu*. Menus can be up to three levels deep:
+
+- A top-level item with children opens a dropdown panel.
+- If those children have their own children, the panel becomes a multi-column mega navigation, one column per child.
+
+To add an image card to a dropdown, add a **Navigation image** block and enter the exact name of the top-level item in **Navigation item** (for example *Shop*). Add two blocks with the same item name for a pair of cards.
+
+## Sticky and transparent header
+
+- **Sticky header** keeps the header on screen — **Always**, or only **On scroll up** so it gets out of the way while reading.
+- **Shrink when scrolled** makes it more compact after the first scroll.
+- **Transparent over the home page hero** lays the header over the first section on the home page. Choose **Transparent header text** to suit light or dark images.
+
+## Account
+
+QThe shows Shopify's customer account component in the header on desktop and mobile. Customers can sign in, see their orders and manage their profile without leaving your store. The links in the account menu come from **Settings > Customer accounts** in your admin.
+
+## Mobile navigation
+
+On phones the menu opens in a drawer. Country and language selectors can be added to the bottom of the drawer.
+
+<SettingsTable section="header" />

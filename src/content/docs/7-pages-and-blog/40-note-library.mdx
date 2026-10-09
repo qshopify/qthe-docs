@@ -1,0 +1,46 @@
+---
+title: "Note library"
+description: "An index of ingredients or notes built from a metaobject, with a detail page for each entry."
+updated: 2026-10-09
+---
+import SettingsTable from '../../../components/SettingsTable.astro';
+import Callout from '../../../components/Callout.astro';
+
+The note library turns a list of ingredients — fragrance notes, botanicals, materials — into a searchable index with a page for each entry. It reads its content from a **metaobject** you create once in your admin.
+
+## 1. Create the metaobject definition
+
+1. In your admin, go to **Settings > Custom data > Metaobjects** and click **Add definition**.
+2. Name it *Note* (the type handle must be `note`, or whatever you enter in the section's **Metaobject type** setting).
+3. Add these fields — only **Name** is required:
+
+| Field | Key | Type |
+| --- | --- | --- |
+| Name | `name` | Single line text |
+| Summary | `summary` | Multi-line text |
+| Family | `family` | Single line text |
+| Layer | `layer` | Single line text (*Top*, *Heart* or *Base*) |
+| Color | `color` | Color |
+| Image | `image` | File (image) |
+| Products | `products` | Product list |
+| Body | `body` | Rich text |
+| Also known as | `aka` | Single line text |
+| Origin | `origin` | Single line text |
+| Character | `character` | Single line text |
+| Mood | `mood` | Single line text |
+| Facets | `facets` | List of single line text, each like *Woody: 80* (0–100) |
+| Pairs with | `pairs_with` | Metaobject list (Note) |
+
+4. Under **Access**, turn on **Storefronts**, and under **Web pages**, turn on **Active** so each entry gets its own page.
+
+## 2. Add entries
+
+Go to **Content > Metaobjects > Note** and add your entries.
+
+## 3. Add the library and entry pages
+
+- Create a page, add the **Note library** section and publish.
+- In the theme editor, open **Metaobjects > Note** from the page dropdown, create a template and add the **Note** section. Every entry page uses it.
+
+<SettingsTable section="note-library" />
+<SettingsTable section="main-note" />

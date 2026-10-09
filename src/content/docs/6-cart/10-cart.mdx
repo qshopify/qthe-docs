@@ -1,0 +1,39 @@
+---
+title: "Cart drawer, cart page and notifications"
+description: "Choose what happens after add to cart, set a free shipping goal, offer upsells and gift notes, and show accelerated checkout."
+updated: 2026-10-09
+---
+import SettingsTable from '../../../components/SettingsTable.astro';
+import Callout from '../../../components/Callout.astro';
+
+## What happens after add to cart
+
+In **Theme settings > Cart**, set **After adding to cart**:
+
+- **Open the cart drawer** — a panel slides in with the bag, a free shipping meter and upsells.
+- **Go to the cart page** — classic behavior.
+- **Show a notification** — a small confirmation near the header, so shoppers keep browsing.
+
+Every add to cart shows a loading state on the button and a confirmation, so shoppers always know it worked.
+
+## Free shipping goal
+
+Set **Free shipping threshold** in Theme settings (in your store's currency). The drawer shows how much is left and celebrates when the goal is reached. Add a **Second milestone** in the cart drawer section — for example a free sample at a higher amount.
+
+<Callout type="note" title="The meter doesn't change shipping rates">
+The meter is a message. Set up the matching free shipping rate in **Settings > Shipping and delivery**.
+</Callout>
+
+## Cart drawer
+
+<SettingsTable section="cart-drawer" />
+
+## Cart page
+
+The cart page lists each item with its image, options, selling plan, discounts and unit price, plus quantity controls. It supports order notes, discount codes, automatic discounts and accelerated checkout buttons.
+
+<SettingsTable section="main-cart" />
+
+## Cart notification
+
+<SettingsTable section="cart-notification" />

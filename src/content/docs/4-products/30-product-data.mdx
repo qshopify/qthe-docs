@@ -1,0 +1,26 @@
+---
+title: "Product details from metafields and tags"
+description: "Card labels, notes lines, scent notes, ratings and badges — filled from your product data, not from theme settings."
+updated: 2026-10-09
+---
+import SettingsTable from '../../../components/SettingsTable.astro';
+import Callout from '../../../components/Callout.astro';
+
+QThe reads a few optional product fields so that the same information shows consistently on cards and product pages. Add them in **Settings > Custom data > Products** as metafield definitions, then fill them in on each product.
+
+| Metafield | Type | Where it shows |
+| --- | --- | --- |
+| `custom.kicker` | Single line text | Small label at the top-left of the product card, for example *N° 014* |
+| `custom.subtitle` | Single line text | The notes line under the product title, for example *Fig leaf · Smoked cedar · Amber* |
+| `custom.notes_top`, `custom.notes_heart`, `custom.notes_base` | Single line text | The three tiers of the **Scent notes** block |
+| `reviews.rating` | Rating | Stars on cards and the product page. Review apps fill this automatically. |
+
+If a product has no notes metafields, the **Scent notes** block falls back to the three parts of `custom.subtitle` separated by *·*. Without either, the block hides itself.
+
+## Badges
+
+Add a product tag that starts with `badge:` to show a badge on its card — for example `badge:Bestseller` or `badge:New`. Sale badges appear automatically when a product has a compare-at price.
+
+## Color swatches
+
+Swatches come from Shopify's own color swatches. In the product's options, link a color option to the **Color** category metafield, or set a swatch color or image for each value. Turn on **Show color swatches** under **Theme settings > Product cards** to show them on cards too.

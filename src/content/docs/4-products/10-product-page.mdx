@@ -1,0 +1,37 @@
+---
+title: "Product page"
+description: "The product information section and every block in it: price, variants, buy buttons, pickup, delivery, notes and more."
+updated: 2026-10-09
+---
+import SettingsTable from '../../../components/SettingsTable.astro';
+import Callout from '../../../components/Callout.astro';
+
+The product page is built from the **Product information** section. Everything in the buy box — title, price, variant picker, buy buttons, description — is a separate block, so you can reorder, remove or repeat them.
+
+## Gallery
+
+All product media shows in the gallery: images, Shopify-hosted videos, YouTube and Vimeo videos and 3D models (with *View in your space* on supported phones). When a shopper picks a variant that has its own image, the gallery jumps to it.
+
+Choose a **Desktop gallery** layout and a **Media shape**. Images of different shapes are fitted into the same frame, so a mixed set never breaks the layout. Turn on **Sticky add-to-cart bar** to keep the buy button in reach while shoppers scroll; it stops at the footer.
+
+## Buy box blocks
+
+- **Title** and **Price** — the price shows compare-at prices, unit prices and a *tax included* note when your store shows prices with tax.
+- **Variant picker** — buttons, swatches (from your product's color swatches) or dropdowns. Sold-out combinations stay visible but are marked.
+- **Buy buttons** — quantity, add to cart, accelerated checkout buttons (on by default), and Shop Pay Installments messaging. Use **Button label override** for pre-orders.
+- **Pickup availability** — shows whether the selected variant can be picked up at your locations, with a link to all stores. Requires local pickup in **Settings > Shipping and delivery**.
+- **Delivery estimate** — an estimated delivery window from your own cut-off time and business days.
+- **Inventory status** — shows a low-stock message when the real inventory is at or under your **Low stock threshold**.
+- **Gift card recipient** — lets shoppers send a gift card to someone else by email, with a message and send date.
+- **Scent notes**, **Collapsible tab**, **Delivery and perks**, **Pairs with**, **What's inside**, **Trust badges**, **Share** — supporting details. Each one hides itself when it has nothing to show.
+- **Custom liquid** and **app blocks** — add review stars, size charts or other app features exactly where you want them.
+
+<SettingsTable section="main-product" />
+
+## Block settings
+
+<SettingsTable section="main-product" block="buy_buttons" />
+<SettingsTable section="main-product" block="pickup" />
+<SettingsTable section="main-product" block="delivery" />
+<SettingsTable section="main-product" block="notes" />
+<SettingsTable section="main-product" block="collapsible" />

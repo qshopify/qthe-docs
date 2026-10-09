@@ -1,0 +1,23 @@
+---
+title: "Scent finder quiz"
+description: "A step-by-step product finder that recommends products from shoppers’ answers and builds a starter kit."
+updated: 2026-10-09
+---
+import SettingsTable from '../../../components/SettingsTable.astro';
+import Callout from '../../../components/Callout.astro';
+
+The **Quiz** section walks shoppers through a few questions, one per screen, then shows a matching result with recommended products and a ready-made kit they can add to the cart in one step. It's built entirely from blocks, so you can change every question without code.
+
+## Set it up
+
+1. Create a page — for example *Find your scent* — and assign the **quiz** page template, or add the **Quiz** section to any page.
+2. Add one **Question** block per step. Each question has up to four answers.
+3. Give each answer a **Match tag** — a short word such as *calm*, *fresh*, *warm* or *night*.
+4. Add one **Result** block per outcome. In **Match tags**, list the tags that lead to it, separated by commas, and pick its **Recommended products**.
+5. Optional: choose a **Starter product** for the kit, and an **adds product** for answers that should add a specific item.
+
+## How results are chosen
+
+When the shopper finishes, the quiz shows the first result whose tags match one of the chosen answers. Order your result blocks from most specific to most general, and keep a catch-all result last.
+
+<SettingsTable section="quiz" />

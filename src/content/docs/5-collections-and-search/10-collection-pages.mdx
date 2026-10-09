@@ -1,0 +1,32 @@
+---
+title: "Collection pages"
+description: "Collection banner, product grid, filters, sorting, promo tiles and the all-collections page."
+updated: 2026-10-09
+---
+import SettingsTable from '../../../components/SettingsTable.astro';
+import Callout from '../../../components/Callout.astro';
+
+A collection page has two main sections: the **Collection banner** at the top and the **Product grid** below it.
+
+## Collection banner
+
+Shows the collection title, description and image. **Collection pills navigation** adds a row of links beside the heading — moods, families or sub-collections — with the current one highlighted.
+
+<SettingsTable section="collection-banner" />
+
+## Product grid
+
+- **Filtering** uses Shopify's own filters. Choose which filters appear (availability, price, product type, vendor, variant options, metafields) in the **Search & Discovery** app.
+- **Sorting** offers Shopify's sort orders: featured, best selling, alphabetical, price and date.
+- **Pagination** can be page numbers or a *Load more* button.
+- Cards show sale badges, price ranges for products with several prices, and unit prices.
+
+Add **Promo tile** blocks to place a campaign tile inside the grid, or **Sidebar note** and **Sidebar image** blocks under the filters.
+
+<SettingsTable section="main-collection" />
+
+## All collections page
+
+The page at `/collections` lists every collection as a grid or list. Collections without an image use their first product's image.
+
+<SettingsTable section="main-list-collections" />
