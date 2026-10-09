@@ -93,6 +93,7 @@ const DOC: Record<string, string> = {
   'languages-and-markets': 'globe',
   'accessibility-and-performance': 'shield',
   'custom-code': 'code',
+  'developer-events': 'activity',
   'support-policy': 'buoy',
   'updating': 'refresh',
   'release-notes': 'checks',
