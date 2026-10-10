@@ -19,3 +19,10 @@
 # Support form auto-reply: netlify/functions/submission-created.mjs
 [functions]
   directory = "netlify/functions"
+
+
+[[redirects]]
+  from = "https://qthe-docs.netlify.app/*"
+  to   = "https://qthe.qdn.vn/:splat"
+  status = 301
+  force = true
