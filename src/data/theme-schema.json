@@ -692,20 +692,21 @@
               "type": "color",
               "id": "background",
               "label": "Background",
-              "info": "Shown behind or instead of the image.",
+              "info": "Shown behind or instead of the image. Pick a pair with the text color below that stays readable.",
               "default": "#B49F84"
             },
             {
               "type": "color",
               "id": "text_color",
               "label": "Text",
+              "info": "Pick a color that reads clearly against the background — and against the image, if \"Darken image for light text\" is off.",
               "default": "#141517"
             },
             {
               "type": "checkbox",
               "id": "shade",
               "label": "Darken image for light text",
-              "default": false
+              "default": true
             }
           ]
         },
@@ -746,20 +747,21 @@
               "type": "color",
               "id": "background",
               "label": "Background",
-              "info": "Shown behind or instead of the image.",
+              "info": "Shown behind or instead of the image. Pick a pair with the text color below that stays readable.",
               "default": "#D4DCD9"
             },
             {
               "type": "color",
               "id": "text_color",
               "label": "Text",
+              "info": "Pick a color that reads clearly against the background — and against the image, if \"Darken image for light text\" is off.",
               "default": "#141517"
             },
             {
               "type": "checkbox",
               "id": "shade",
               "label": "Darken image for light text",
-              "default": false
+              "default": true
             }
           ]
         },
@@ -794,20 +796,21 @@
               "type": "color",
               "id": "background",
               "label": "Background",
-              "info": "Shown behind or instead of the image.",
+              "info": "Shown behind or instead of the image. Pick a pair with the text color below that stays readable.",
               "default": "#2E2824"
             },
             {
               "type": "color",
               "id": "text_color",
               "label": "Text",
+              "info": "Pick a color that reads clearly against the background — and against the image, if \"Darken image for light text\" is off.",
               "default": "#EEE9DE"
             },
             {
               "type": "checkbox",
               "id": "shade",
               "label": "Darken image for light text",
-              "default": false
+              "default": true
             }
           ]
         }
@@ -3391,7 +3394,7 @@
           "type": "text",
           "id": "drawer_id",
           "label": "Drawer ID",
-          "info": "Any link or button with data-open=\"#drawer-<ID>\" opens this drawer, e.g. #drawer-scent-notes.",
+          "info": "Any link or button with data-open=\"#drawer-ID\" opens this drawer, e.g. #drawer-scent-notes.",
           "default": "scent-notes"
         },
         {
@@ -6300,12 +6303,14 @@
               "type": "color",
               "id": "tone",
               "label": "Panel color",
+              "info": "Panel background if no image is set above (and shows through the scrim when one is). Pair it with a readable text color below.",
               "default": "#D9D4CA"
             },
             {
               "type": "color",
               "id": "tone_text",
               "label": "Panel text color",
+              "info": "Pick a color that reads clearly against the panel color above.",
               "default": "#141517"
             },
             {
