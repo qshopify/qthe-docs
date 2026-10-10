@@ -20,7 +20,7 @@ export const FAQS: FaqGroup[] = [
       },
       {
         q: 'How do I change the logo and favicon?',
-        a: 'Upload the logo in the <b>Header</b> section (<b>Logo image</b>) and the favicon in <b>Theme settings &gt; Logo and favicon</b>.',
+        a: 'Upload the logo in the <b>Header</b> section (<b>Logo image</b>) and the favicon in <b>Theme settings &gt; Favicon</b>. The footer has its own <b>Logo image</b> setting.',
       },
     ],
   },

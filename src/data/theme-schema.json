@@ -5,19 +5,13 @@
   },
   "global": [
     {
-      "name": "Logo and favicon",
+      "name": "Favicon",
       "settings": [
         {
           "type": "image_picker",
           "id": "favicon",
           "label": "Favicon",
           "info": "32 x 32px .png recommended."
-        },
-        {
-          "type": "checkbox",
-          "id": "favicon_qthe",
-          "label": "Use the QThe favicon when no image is set",
-          "default": true
         }
       ]
     },
@@ -2322,20 +2316,20 @@
           "content": "Wordmark"
         },
         {
-          "type": "select",
-          "id": "logo_type",
-          "label": "Brand mark",
-          "default": "qthe",
-          "options": [
-            {
-              "value": "text",
-              "label": "Store name"
-            },
-            {
-              "value": "qthe",
-              "label": "QThe logo (built in)"
-            }
-          ]
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo image",
+          "info": "Shown in the footer brand area. Without an image, the store name is shown."
+        },
+        {
+          "type": "range",
+          "id": "logo_width",
+          "label": "Logo width",
+          "default": 140,
+          "unit": "px",
+          "min": 60,
+          "max": 240,
+          "step": 4
         },
         {
           "type": "checkbox",
@@ -2608,22 +2602,6 @@
           "type": "image_picker",
           "id": "logo",
           "label": "Logo image"
-        },
-        {
-          "type": "select",
-          "id": "logo_type",
-          "label": "Without a logo image, show",
-          "default": "qthe",
-          "options": [
-            {
-              "value": "text",
-              "label": "Store name"
-            },
-            {
-              "value": "qthe",
-              "label": "QThe logo (built in)"
-            }
-          ]
         },
         {
           "type": "range",
