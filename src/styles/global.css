@@ -55,7 +55,7 @@
   /* ---- sidebar ---- */
   .sidebar { @apply sticky self-start py-9 pr-2; top:var(--header); max-height:calc(100vh - var(--header)); overflow-y:auto; }
   .sidebar .grp { @apply mb-6; }
-  .sidebar .grp-t { @apply font-mono text-label uppercase text-muted mb-2.5; display:flex; align-items:center; gap:8px; }
+  .sidebar .grp-t { @apply font-mono text-label uppercase text-ink-2 mb-2.5; display:flex; align-items:center; gap:8px; font-size:.75rem; letter-spacing:.09em; }
   .sidebar .grp-ic { display:inline-flex; color:var(--accent-ink); opacity:.9; }
   .sidebar a { @apply text-sm text-ink-2 rounded-lg px-2.5 py-1.5 -ml-2.5 transition; display:flex; align-items:center; gap:9px; }
   .sidebar a .ic { flex:none; display:inline-flex; color:var(--muted); transition:color .15s; }
@@ -75,7 +75,7 @@
 
   /* ---- article header ---- */
   .article { @apply py-9 min-w-0; }
-  .crumb { @apply font-mono text-label uppercase text-muted mb-4; }
+  .crumb { @apply font-mono text-label uppercase text-ink-2 mb-4; font-size:.75rem; letter-spacing:.09em; }
   .article h1 { @apply text-h1 font-extrabold; }
   .article .lead { @apply text-lg text-ink-2 mt-3; }
   .meta { @apply flex items-center gap-2 mt-4 font-mono text-xs text-muted; }
