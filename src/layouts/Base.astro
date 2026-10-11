@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { theme, logo, site } from '../config';
+import { loadDocs } from '../lib/docs';
 const { title, description } = Astro.props as { title?: string; description?: string };
 const t = theme();
 const pageTitle = title ?? `${t.brand} ${site.guideLabel}`;
@@ -8,8 +9,9 @@ const pageDescription = description ?? site.tagline;
 const vars = `--accent:${t.accent};--accent-ink:${t.accentInk};--accent-soft:${t.accentSoft};`;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url).href;
 const path = Astro.url.pathname;
+const docsHome = (await loadDocs())[0]?.url ?? '/docs';
 const nav = [
-  { href: '/docs', label: 'Docs', on: path.startsWith('/docs') },
+  { href: docsHome, label: 'Docs', on: path.startsWith('/docs') },
   { href: '/faq', label: 'FAQ', on: path.startsWith('/faq') },
   { href: '/support', label: 'Support', on: path.startsWith('/support') },
 ];
@@ -63,7 +65,7 @@ const year = new Date().getFullYear();
           <span>{t.brand} — a Shopify theme by QDN</span>
         </div>
         <nav class="sfoot-links" aria-label="Footer">
-          <a href="/docs">Docs</a>
+          <a href={docsHome}>Docs</a>
           <a href="/faq">FAQ</a>
           <a href="/support">Contact support</a>
           <a href="/docs/support/support-policy">Support policy</a>
