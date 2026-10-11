@@ -16,7 +16,7 @@
   .search-trigger:hover { @apply text-ink border-line-2; }
   .st-kbd { @apply font-mono text-[11px] text-faint border border-line-2 rounded px-1.5 py-0.5 ml-1; }
 
-  .search-dialog { position:relative; width:min(600px, calc(100vw - 32px)); max-height:min(70vh, 560px);
+  .search-dialog { position:relative; width:min(600px, calc(100vw - 32px)); min-height:240px; max-height:min(70vh, 560px);
     padding:16px; border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow-float); background:var(--paper); overflow:hidden; }
   .search-dialog::backdrop { background:rgba(30,30,26,.4); backdrop-filter:blur(2px); }
   .sd-close { position:absolute; top:14px; right:14px; z-index:2; font-family:var(--mono); font-size:11px; color:var(--muted);
@@ -75,6 +75,7 @@
     };
 
     const open = async () => {
+      if (!pfui && !failed) container.innerHTML = '<div class="sd-empty">Loading search…</div>';
       dialog.showModal();
       await ensurePfui();
       container.querySelector('input')?.focus();
