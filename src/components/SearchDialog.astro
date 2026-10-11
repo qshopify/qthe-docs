@@ -1,0 +1,131 @@
+<link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
+
+<dialog id="searchDialog" class="search-dialog" aria-label="Search docs">
+  <div class="sd-head">
+    <span class="sd-label">Search docs</span>
+    <button type="button" id="searchClose" class="sd-close" aria-label="Close search">
+      <span class="sd-close-d">Esc</span><span class="sd-close-m">Close</span>
+    </button>
+  </div>
+  <div id="pfContainer" class="pf-container">
+    <!-- Stand-in until Pagefind UI mounts: same box as its input, and typeable. -->
+    <div class="pf-skel">
+      <input class="pf-skel-input" type="text" placeholder="Search" autocomplete="off" spellcheck="false" aria-label="Search docs" />
+    </div>
+  </div>
+</dialog>
+
+<style>
+  .search-dialog { width:min(600px, calc(100vw - 32px)); min-height:240px; max-height:min(76vh, 600px);
+    padding:12px 16px 16px; border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow-float); background:var(--paper); overflow:hidden; }
+  .search-dialog[open] { display:flex; flex-direction:column; }
+  .search-dialog::backdrop { background:rgba(30,30,26,.4); backdrop-filter:blur(2px); }
+  .sd-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; flex:none; }
+  .sd-label { font-family:var(--mono); font-size:11px; letter-spacing:.09em; text-transform:uppercase; font-weight:600; color:var(--accent-ink); }
+  .sd-close { font-family:var(--mono); font-size:11px; color:var(--muted); border:1px solid var(--line-2); border-radius:6px; padding:4px 8px; background:var(--paper); }
+  .sd-close:hover { color:var(--ink); border-color:var(--muted); }
+  .sd-close-m { display:none; }
+  @media (max-width:767px) { .sd-close-d { display:none; } .sd-close-m { display:inline; } }
+  .pf-container :global(.sd-empty) { padding:28px 16px; text-align:center; color:var(--muted); font-size:14px; }
+
+  .pf-container { flex:1; min-height:0; overflow-y:auto;
+    --pagefind-ui-scale: 0.92;
+    --pagefind-ui-primary: var(--accent-ink);
+    --pagefind-ui-text: var(--ink);
+    --pagefind-ui-background: var(--paper);
+    --pagefind-ui-border: var(--line);
+    --pagefind-ui-tag: var(--paper-2);
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 10px;
+    --pagefind-ui-font: inherit;
+  }
+  .pf-container :global(.pagefind-ui__search-input:focus),
+  .pf-skel-input:focus { outline:2px solid var(--accent); outline-offset:0; }
+  .pf-container :global(.pagefind-ui__result-link) { color:var(--accent-ink); }
+  .pf-container :global(mark) { background:var(--accent-soft); color:var(--accent-ink); border-radius:3px; padding:0 2px; }
+
+  /* Mirrors pagefind-ui.css (.pagefind-ui__form / __search-input) so the swap doesn't shift a pixel. */
+  .pf-skel { position:relative; }
+  .pf-skel::before { content:""; position:absolute; z-index:1; pointer-events:none; opacity:.7;
+    width:calc(18px * var(--pagefind-ui-scale)); height:calc(18px * var(--pagefind-ui-scale));
+    top:calc(23px * var(--pagefind-ui-scale)); left:calc(20px * var(--pagefind-ui-scale));
+    background-color:var(--pagefind-ui-text);
+    -webkit-mask:url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.7549 11.255H11.9649L11.6849 10.985C12.6649 9.845 13.2549 8.365 13.2549 6.755C13.2549 3.165 10.3449 0.255005 6.75488 0.255005C3.16488 0.255005 0.254883 3.165 0.254883 6.755C0.254883 10.345 3.16488 13.255 6.75488 13.255C8.36488 13.255 9.84488 12.665 10.9849 11.685L11.2549 11.965V12.755L16.2549 17.745L17.7449 16.255L12.7549 11.255ZM6.75488 11.255C4.26488 11.255 2.25488 9.245 2.25488 6.755C2.25488 4.26501 4.26488 2.255 6.75488 2.255C9.24488 2.255 11.2549 4.26501 11.2549 6.755C11.2549 9.245 9.24488 11.255 6.75488 11.255Z'/%3E%3C/svg%3E") center / 100% no-repeat;
+            mask:url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.7549 11.255H11.9649L11.6849 10.985C12.6649 9.845 13.2549 8.365 13.2549 6.755C13.2549 3.165 10.3449 0.255005 6.75488 0.255005C3.16488 0.255005 0.254883 3.165 0.254883 6.755C0.254883 10.345 3.16488 13.255 6.75488 13.255C8.36488 13.255 9.84488 12.665 10.9849 11.685L11.2549 11.965V12.755L16.2549 17.745L17.7449 16.255L12.7549 11.255ZM6.75488 11.255C4.26488 11.255 2.25488 9.245 2.25488 6.755C2.25488 4.26501 4.26488 2.255 6.75488 2.255C9.24488 2.255 11.2549 4.26501 11.2549 6.755C11.2549 9.245 9.24488 11.255 6.75488 11.255Z'/%3E%3C/svg%3E") center / 100% no-repeat; }
+  .pf-skel-input { display:flex; width:100%; box-sizing:border-box; appearance:none; -webkit-appearance:none;
+    height:calc(64px * var(--pagefind-ui-scale));
+    padding:0 calc(70px * var(--pagefind-ui-scale)) 0 calc(54px * var(--pagefind-ui-scale));
+    font:inherit; font-size:calc(21px * var(--pagefind-ui-scale)); font-weight:700; line-height:1.6;
+    color:var(--pagefind-ui-text); background-color:var(--pagefind-ui-background);
+    border:var(--pagefind-ui-border-width) solid var(--pagefind-ui-border); border-radius:var(--pagefind-ui-border-radius); }
+  .pf-skel-input::placeholder { color:var(--pagefind-ui-text); opacity:.2; }
+</style>
+
+<!-- Rendered at the end of <body>: every [data-search-open] trigger exists by the time this runs,
+     and the dialog sits outside the header nav, which is display:none on mobile. -->
+<script is:inline>
+  (() => {
+    const triggers = document.querySelectorAll('[data-search-open]');
+    const dialog = document.getElementById('searchDialog');
+    const closeBtn = document.getElementById('searchClose');
+    const container = document.getElementById('pfContainer');
+    const skelInput = container.querySelector('.pf-skel-input');
+
+    let mounting = null;
+    let indexWarm = null;
+
+    // Swap the stand-in for the real UI, carrying over anything already typed.
+    const mountUI = () => (mounting ??= (async () => {
+      try {
+        // Generated by `pagefind --site dist` after the build, so it 404s under `astro dev`.
+        await import(/* @vite-ignore */ '/pagefind/pagefind-ui.js');
+        const typed = skelInput.value;
+        const hadFocus = document.activeElement === skelInput;
+        container.innerHTML = '';
+        const ui = new window.PagefindUI({ element: '#pfContainer', showSubResults: true, showImages: false, resetStyles: false });
+        if (typed) ui.triggerSearch(typed);
+        const input = container.querySelector('input');
+        if (input && hadFocus) {
+          input.focus();
+          input.setSelectionRange(input.value.length, input.value.length);
+        }
+        return true;
+      } catch {
+        container.innerHTML = '<div class="sd-empty">Search runs on the built site. Use <code>npm run build && npm run preview</code> to try it locally.</div>';
+        return false;
+      }
+    })());
+
+    // Loads the search engine and index so the first keystroke doesn't wait on them.
+    const warmIndex = () => mountUI().then((ok) => {
+      if (ok) indexWarm ??= import(/* @vite-ignore */ '/pagefind/pagefind.js').then((pf) => pf.init()).catch(() => {});
+    });
+
+    const open = () => {
+      dialog.showModal();
+      document.querySelector('details.mmenu')?.removeAttribute('open');
+      container.querySelector('input')?.focus();
+      warmIndex();
+    };
+    const close = () => dialog.close();
+
+    triggers.forEach((t) => {
+      t.addEventListener('click', open);
+      for (const ev of ['pointerenter', 'touchstart', 'focus']) t.addEventListener(ev, warmIndex, { once: true, passive: true });
+    });
+    closeBtn.addEventListener('click', close);
+    dialog.addEventListener('click', (e) => { if (e.target === dialog) close(); });
+    document.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        dialog.open ? close() : open();
+      }
+    });
+
+    // Mobile triggers live in the closed hamburger menu, so hover never fires there — fetch the UI when idle instead.
+    if (!navigator.connection?.saveData) {
+      const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 1500));
+      idle(() => mountUI(), { timeout: 4000 });
+    }
+  })();
+</script>

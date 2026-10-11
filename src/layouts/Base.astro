@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { theme, logo, site } from '../config';
 import { loadDocs } from '../lib/docs';
 import Search from '../components/Search.astro';
+import SearchDialog from '../components/SearchDialog.astro';
 const { title, description } = Astro.props as { title?: string; description?: string };
 const t = theme();
 const pageTitle = title ?? `${t.brand} ${site.guideLabel}`;
@@ -80,6 +81,7 @@ const year = new Date().getFullYear();
         <p class="sfoot-fine">© {year} QDN. Shopify is a trademark of Shopify Inc.</p>
       </div>
     </footer>
+    <SearchDialog />
     <script src="https://qdn.qone.work/widget.js" data-product="fp_24c1b1351a3374b90f1df212" async></script>
   </body>
 </html>
