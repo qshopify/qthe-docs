@@ -23,7 +23,7 @@ const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(
     </nav>
   </section>
 
-  <section class="wrap faq">
+  <section class="wrap faq" data-pagefind-body>
     {FAQS.map((g) => (
       <section class="faq-group" id={slug(g.topic)}>
         <h2>{g.topic}</h2>

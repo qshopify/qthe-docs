@@ -316,6 +316,9 @@ a:focus-visible, button:focus-visible, .sidebar a:focus-visible { outline:2px so
   background:#fff; border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow-float); }
 .mmenu-panel a { padding:10px 12px; border-radius:9px; font-size:15px; font-weight:500; color:var(--ink-2); }
 .mmenu-panel a:hover, .mmenu-panel a[aria-current] { background:var(--accent-soft); color:var(--accent-ink); }
+.mmenu-search { display:flex; align-items:center; gap:9px; padding:10px 12px; margin-bottom:4px; border-radius:9px; border:1px solid var(--line);
+  font-size:15px; font-weight:500; color:var(--ink-2); background:var(--paper-2); text-align:left; }
+.mmenu-search:hover { color:var(--ink); border-color:var(--line-2); }
 @media (min-width:768px){ .mmenu { display:none; } }
 
 /* docs navigation on phones (the sidebar is hidden below 860px) */
