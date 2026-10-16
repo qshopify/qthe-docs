@@ -37,7 +37,7 @@ export const FAQS: FaqGroup[] = [
       },
       {
         q: 'Which fonts does QThe use, and can I change them?',
-        a: 'By default, Unbounded for headings and Figtree for body text, both from Shopify’s font library. Seventh Steep and Vesper use their own pairs. Change them in <b>Theme settings &gt; Typography</b>, and scale every heading with <b>Heading size</b> in <b>Theme settings &gt; Theme style</b>.',
+        a: 'By default, Unbounded for headings and Figtree for body text, both from Shopify’s font library. Seventh Steep and Vesper use their own pairs. Change them in <b>Theme settings &gt; Typography</b>, and scale every heading with <b>Heading size</b> in <b>Theme settings &gt; Shapes and sizes</b>.',
       },
       {
         q: 'Why don’t I see the newsletter form in the footer?',
@@ -112,7 +112,7 @@ export const FAQS: FaqGroup[] = [
       },
       {
         q: 'What changes when I update to 1.1.0?',
-        a: 'Version 1.1.0 adds the note strip, the Note tiers product layout, the Note wall section, Theme style and Note strips settings, and new section layouts. Your settings and content carry over, and every earlier layout is still available. Preview your pages before publishing, since some sections have new defaults. See the <a href="/docs/support/release-notes">release notes</a>.',
+        a: 'Version 1.1.0 adds the note strip, the Note tiers product layout, the Note wall section, Shapes and sizes and Note strips settings, and new section layouts. Your settings and content carry over, and every earlier layout is still available. Preview your pages before publishing, since some sections have new defaults. See the <a href="/docs/support/release-notes">release notes</a>.',
       },
       {
         q: 'Can you customize the theme for me?',
