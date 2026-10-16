@@ -1,14 +1,14 @@
 ---
 title: "Header and navigation"
 description: "Logo, header layouts, mega navigation images, search, sticky behavior and the transparent header."
-updated: 2026-10-09
+updated: 2026-10-15
 ---
 import SettingsTable from '../../../components/SettingsTable.astro';
 import Callout from '../../../components/Callout.astro';
 
 The header holds your logo, main menu, search, the account component and the cart. Open it from the **Header** group in the theme editor.
 
-<img src="/images/docs/header.png" alt="QThe storefront header: logo centred, main menu on the left, search, account and cart icons on the right." width="1425" height="80" />
+<img src="/images/docs/header.png" alt="QThe storefront header: logo centered, main menu on the left, search, account and cart icons on the right." width="1425" height="80" />
 
 ## Logo
 
@@ -43,5 +43,7 @@ QThe shows Shopify's customer account component in the header on desktop and mob
 ## Mobile navigation
 
 On phones the menu opens in a drawer. Country and language selectors can be added to the bottom of the drawer.
+
+**Mobile menu family tiles** adds a grid of color tiles under the menu, one per collection you choose (up to eight) — for example one per scent family. Each tile is filled with the collection's color from its `custom.color` metafield; without one, tiles take the color scheme's strip colors in turn. Text on each tile turns light or dark to suit its color. **Family tiles heading** sets the small heading above the tiles. See [Collection and article metafields](/docs/products/product-data#collection-and-article-metafields).
 
 <SettingsTable section="header" />

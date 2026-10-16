@@ -1,7 +1,7 @@
 ---
 title: "Newsletter popup, cookie banner and info drawer"
 description: "Overlays that appear on every page: a newsletter popup, a cookie consent banner and a side drawer."
-updated: 2026-10-09
+updated: 2026-10-15
 ---
 import SettingsTable from '../../../components/SettingsTable.astro';
 import Callout from '../../../components/Callout.astro';
@@ -10,9 +10,11 @@ Add these sections to the **Footer** group so they work on every page.
 
 ## Newsletter popup
 
-Opens after a delay, or when the pointer leaves the page on desktop. Once a shopper closes it or signs up, it stays closed for the rest of their visit. After signing up you can show a thank-you message with a discount code — create the code in **Discounts** first.
+Opens after a delay, or when the pointer leaves the page on desktop. Once a shopper closes it or signs up, it stays closed for the rest of their visit, and for the number of days in **Keep closed after dismissal**. Set it to 0 to show the popup again in the next visit. After signing up you can show a thank-you message with a discount code — create the code in **Discounts** first.
 
-<img src="/images/docs/newsletter-popup.png" alt="The newsletter popup, centred over the page with a scrim behind it." width="1449" height="924" />
+Choose a **Layout**: **Docked card** is a small card in the bottom-left corner that leaves the page usable. **Centered modal** opens in the middle of the page over a scrim.
+
+<img src="/images/docs/newsletter-popup.png" alt="The newsletter popup in the Centered modal layout, centered over the page with a scrim behind it." width="1449" height="924" />
 
 <SettingsTable section="newsletter-popup" />
 
@@ -22,6 +24,8 @@ QThe works with Shopify's own cookie banner. If you turn on the banner in **Sett
 
 <img src="/images/docs/cookie-banner.png" alt="The cookie consent banner." width="1449" height="924" />
 
+Choose a **Layout**: **Card** is a small card in the bottom-right corner with a *Manage* link and two equal buttons to reject or accept. **Bar** runs along the bottom of the page.
+
 <SettingsTable section="cookie-banner" />
 
 ## Info drawer
@@ -29,5 +33,7 @@ QThe works with Shopify's own cookie banner. If you turn on the banner in **Sett
 A side panel with notes, a table or text — a size guide, an ingredient list, care instructions. Open it from its own trigger button. Developers can open it from any element with the attribute `data-open="#drawer-ID"`, where *ID* is the **Drawer ID**.
 
 <img src="/images/docs/info-drawer.png" alt="An info drawer open from its trigger button, sliding in from the side." width="1449" height="924" />
+
+Add **Link row** blocks for links such as a safety data sheet. Turn on **Open in a new tab** for files and outside pages.
 
 <SettingsTable section="info-drawer" />

@@ -1,7 +1,7 @@
 ---
 title: "Search"
 description: "Predictive search in the header and the full search results page with tabs and filters."
-updated: 2026-10-09
+updated: 2026-10-15
 ---
 import SettingsTable from '../../../components/SettingsTable.astro';
 import Callout from '../../../components/Callout.astro';
@@ -10,9 +10,13 @@ import Callout from '../../../components/Callout.astro';
 
 As shoppers type in the header search, QThe suggests products, collections and journal articles, plus related search terms. It uses Shopify's predictive search, so there's nothing to set up.
 
+When you use the [note library](/docs/pages-and-blog/note-library), predictive search also lists matching **Note** entries, each with a tick in its color. Product suggestions show their note strip, and when the search names one of a product's notes, where that note sits — for example *Cedar in the heart*.
+
 ## Search results page
 
 Results are grouped into tabs — **All**, **Products**, **Journal** and **Pages** — with the same filters and sorting as collections. When nothing matches, shoppers see a helpful message and can try again from the same page.
+
+With **Show matching note** on, a search that names an entry in your **Note** metaobject shows that note first: a card with its name and summary, in the **Note card color scheme**, then the products that carry it, with their strips and three notes, and other notes of the same family.
 
 <img src="/images/docs/main-search.png" alt="The search results page: a search field and matching products." width="1440" height="1000" />
 

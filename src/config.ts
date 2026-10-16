@@ -1,7 +1,7 @@
 /* =====================================================================
    GUIDE CONFIG — the ONE file to style this guide for a given app.
    Change `preset` to one of the QDN-family apps and the whole guide
-   reskins (accent colour + logo glyph + name). Or set custom overrides.
+   reskins (accent color + logo glyph + name). Or set custom overrides.
    ===================================================================== */
 
 export type Glyph = 'square' | 'stack' | 'signal' | 'rosette';
@@ -25,7 +25,7 @@ export type Preset = {
   glyph: Glyph;
 };
 
-/** The QDN family — reuse the exact brand marks + colours. */
+/** The QDN family — reuse the exact brand marks + colors. */
 export const PRESETS: Record<string, Preset> = {
   qdn:     { brand: 'QDN',     accent: '#e2622a', accentInk: '#ab4715', accentSoft: '#f7e4d8', glyph: 'square' },
   // QSortby — matches the marketing site's "Polaris Pro" Shopify-green accent.

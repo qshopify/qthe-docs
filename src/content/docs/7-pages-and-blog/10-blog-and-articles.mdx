@@ -1,7 +1,7 @@
 ---
 title: "Blog and articles"
 description: "Three blog layouts, featured articles, tag filters, and article options such as contents, drop cap and share links."
-updated: 2026-10-09
+updated: 2026-10-15
 ---
 import SettingsTable from '../../../components/SettingsTable.astro';
 import Callout from '../../../components/Callout.astro';
@@ -13,8 +13,11 @@ Pick a layout in the **Blog posts** section, or assign one of the alternate blog
 - **Grid** — cards with an optional featured latest article.
 - **Index list (grouped by month)** — a compact archive for frequent publishers.
 - **Grid with sidebar** — tags and a newsletter signup beside the grid.
+- **Rows** — one ruled row per article: image, tag and reading time, title, and the product the article is about, marked with a tick in its heart note color.
 
 Cards use each article's image, title and excerpt. Write a short excerpt in the article editor; without one, the start of the article is used.
+
+To link an article to a product, fill the article's `custom.product` metafield with a product or a list of products. See [Collection and article metafields](/docs/products/product-data#collection-and-article-metafields).
 
 <img src="/images/docs/main-blog.png" alt="A blog's article listing page." width="1440" height="1000" />
 
@@ -23,6 +26,9 @@ Cards use each article's image, title and excerpt. Write a short excerpt in the 
 ## Articles
 
 Articles show the title, publish date, author and featured image. **Show "In this story" contents** builds a table of contents from the article's subheadings. Comments appear when you allow them on the blog, and are paginated.
+
+- **Show note strip rail** runs a note strip beside the reading column — the strip of the first product in the article's `custom.product` metafield, or the color scheme's strip colors.
+- **Show oils in this article** adds an *In this article* list of the products in `custom.product`. Without the metafield, the list is hidden.
 
 <img src="/images/docs/main-article.png" alt="An article page: cover image, byline and body content." width="1440" height="1100" />
 

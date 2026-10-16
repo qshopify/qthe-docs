@@ -1,7 +1,7 @@
 ---
 title: "Collection pages"
 description: "Collection banner, product grid, filters, sorting, promo tiles and the all-collections page."
-updated: 2026-10-09
+updated: 2026-10-15
 ---
 import SettingsTable from '../../../components/SettingsTable.astro';
 import Callout from '../../../components/Callout.astro';
@@ -10,7 +10,10 @@ A collection page has two main sections: the **Collection banner** at the top an
 
 ## Collection banner
 
-Shows the collection title, description and image. **Collection pills navigation** adds a row of links beside the heading — moods, families or sub-collections — with the current one highlighted.
+Shows the collection title, description and image. Choose a **Layout**:
+
+- **Band** — a block of the collection's family color beside a large title, with the description and product count at the far edge of the band. The color is **Band color**; when that's blank, it's the collection's `custom.color` metafield, then the color of the **Note** entries whose family matches the collection title, or else the color scheme's strip color. Band is the layout for new Collection banner sections.
+- **Classic** — breadcrumbs, a large title and description, and **Collection pills navigation**: a row of links beside the heading — moods, families or sub-collections — with the current one highlighted.
 
 <img src="/images/docs/collection-page.png" alt="A collection page: banner, filters, sort and the product grid." width="1440" height="1100" />
 
@@ -24,6 +27,14 @@ Shows the collection title, description and image. **Collection pills navigation
 - Cards show sale badges, price ranges for products with several prices, and unit prices.
 
 Add **Promo tile** blocks to place a campaign tile inside the grid, or **Sidebar note** and **Sidebar image** blocks under the filters.
+
+### Bottles and strips views
+
+**Show Bottles / Strips toggle** lets shoppers switch the grid between the usual product cards (**Bottles**) and **Strips**, a board of tall [note strips](/docs/products/note-strip) with product names. Set the view the page opens in with **Default view**. Filtering, sorting and *Load more* keep the chosen view.
+
+### Family chips
+
+**Show family chips** shows one filter as a row of chips above the grid, each with a tick in its family color. Enter the filter's name in **Chip filter** — for example *Family* — or leave it blank to use the first list filter. A chip's color is the filter value's swatch, or else the color of the **Note** entries in that family. Chips need filtering to be on.
 
 <SettingsTable section="main-collection" />
 

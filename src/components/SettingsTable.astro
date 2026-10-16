@@ -14,7 +14,7 @@ type Setting = {
   type: string; id?: string; label?: string; info?: string; content?: string;
   default?: unknown; unit?: string; min?: number; max?: number; step?: number;
   options?: { value: string; label: string }[];
-  fields?: string[];
+  fields?: (string | null)[];
 };
 type Block = { type: string; name: string; settings: Setting[] };
 type Section = { name: string; settings: Setting[]; blocks: Block[]; appBlocks?: boolean };
@@ -89,7 +89,7 @@ for (const s of settings) {
             <span class="opts">{r.setting.options.map((o) => <span class="opt">{o.label}</span>)}</span>
           )}
           {r.setting.fields && (
-            <>Each scheme sets: <span class="opts">{r.setting.fields.map((f) => <span class="opt">{f}</span>)}</span></>
+            <>Each scheme sets: <span class="opts">{r.setting.fields.filter(Boolean).map((f) => <span class="opt">{f}</span>)}</span></>
           )}
           {fmtDefault(r.setting) && <span class="def">{fmtDefault(r.setting)}</span>}
         </dd>

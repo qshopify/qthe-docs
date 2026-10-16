@@ -1,10 +1,43 @@
 ---
 title: "Release notes"
 description: "What’s new in each version of QThe."
-updated: 2026-10-09
+updated: 2026-10-15
 ---
 import SettingsTable from '../../../components/SettingsTable.astro';
 import Callout from '../../../components/Callout.astro';
+
+## 1.1.0 — Drydown
+
+QThe now reads every product the way it unfolds. A [note strip](/docs/products/note-strip), one band per stage with the longest-lasting note at the tip, runs through the whole theme and is drawn from the product's own data.
+
+### The note strip
+
+- Strips draw from product metafields — top, heart and base notes, optionally linked to **Note** entries with a color and family — and fall back to the product's color swatches, then to three strip colors set in each color scheme. Band lengths come from a product metafield or a theme setting.
+- Product cards carry the strip down the left edge or across the top, with a square quick add button on the image.
+- New **Note tiers** product page layout: the page becomes the product's strip, with the buy box in the first tier and one tier per heart and base note, each with its own color scheme.
+- New **Note wall** section: every product of a collection as a strip, in columns (a home page hero) or rows (a ledger with price and quick add), with family filters.
+- Strips in the cart drawer, cart page, cart notification, quick view, predictive search, recommendations, recently viewed, bundle builder, testimonials, shoppable image hotspots, slideshow progress, video chapters, countdown, gift card, 404 and password pages, and a note rule above the footer.
+
+### Store-wide
+
+- New **Theme style** settings: strip tip, strip widths, button shape and case, heading size.
+- New **Note strips** settings: default band lengths and the strip on product cards.
+- Five redesigned color schemes, each with three strip colors.
+- Three presets with their own templates: QThe, Seventh Steep and Vesper.
+- New layouts on existing sections: collage, feature tiles, image banner, image with text, rich text, testimonials, FAQ, featured blog, newsletter, collection banner, collection list, comparison, main collection, main cart, blog, article, account and search. Every previous layout is still available.
+
+### Fixes
+
+- **Image with text**: with **Note strip on the seam** on and the image on the left, the text could land in the narrow strip column on wide screens. The image, strip and text now always sit in that order.
+- **Header**: a long store name used as a text logo no longer runs into the header icons on phones. The letter spacing tightens below tablet width.
+- **Collection list, Collection tabs, Collection banner and filter chips** now use a collection's own `custom.color` metafield before the family color.
+- **Note wall**: in the Columns layout, a long product name no longer runs into the strip above it.
+- **Collage**: a newly added note card shows the first entry of your note library until you pick one.
+- American English throughout the theme's default content.
+
+<Callout type="note" title="Updating from 1.0.0">
+Your settings, sections and content carry over. Several sections have new default layouts, and a setting you never changed can pick up its new default, so preview your pages in the theme editor before you publish the update. Every 1.0.0 layout is still available. To use the note strip with your own colors, add the notes metafields described in [Product details from metafields and tags](/docs/products/product-data).
+</Callout>
 
 ## 1.0.0
 

@@ -1,12 +1,40 @@
 ---
 title: "Product page"
-description: "The product information section and every block in it: price, variants, buy buttons, pickup, delivery, notes and more."
-updated: 2026-10-10
+description: "The product information section, its Classic and Note tiers layouts, and every block in it: price, variants, buy buttons, pickup, delivery, notes, tiers and more."
+updated: 2026-10-15
 ---
 import SettingsTable from '../../../components/SettingsTable.astro';
 import Callout from '../../../components/Callout.astro';
 
 The product page is built from the **Product information** section. Everything in the buy box — title, price, variant picker, buy buttons, description — is a separate block, so you can reorder, remove or repeat them.
+
+## Layouts
+
+Choose a **Layout** in the **Product information** section:
+
+- **Classic** — the gallery beside the buy box.
+- **Note tiers** — the page becomes the product's [note strip](/docs/products/note-strip), read from top to bottom. The default product template and all three presets use this layout.
+
+### Note tiers layout
+
+In the **Note tiers** layout, the page is split into up to three tiers, one per stage of the product's notes. A rail down the left side of each tier takes the color of that note, and the last tier's rail ends in the strip's tip. Set the rail's thickness with **Strip width on product pages** in **Theme settings > Theme style**.
+
+- **Top tier** — every block before the first **Tier** block forms the buy box, shown beside the gallery.
+- **Heart and base tiers** — each **Tier** block starts a new tier. The tier opens with its label (*Heart* or *Base*), the note's name and, when **Show note summary** is on, the note's summary. Every block after a **Tier** block sits inside that tier, until the next **Tier** block.
+
+Add up to two **Tier** blocks. Each one has its own settings:
+
+- **Note** — **Heart** or **Base**: which of the product's notes the tier shows.
+- **Show note summary** — shows the `summary` field of the note's entry in your **Note** metaobject.
+- **Color scheme** — the tier's own colors, so the tiers can step from light to dark down the page.
+
+The note's name and summary come from the product's `custom.notes_heart` or `custom.notes_base` metafield and its **Note** entry. See [Product details from metafields and tags](/docs/products/product-data#notes-metafields).
+
+<Callout type="tip" title="Move blocks between tiers">
+Drag a block above or below a **Tier** block in the theme editor to move it into another tier. In the default product template, the title, price, variant picker and buy buttons sit in the top tier, *How it performs*, *How to use* and **Pairs with** in the heart tier, and the shipping and safety tabs and **Scent notes** in the base tier.
+</Callout>
+
+In the **Classic** layout, **Tier** blocks are ignored, so you can switch layouts without removing them.
 
 ## Gallery
 
@@ -45,3 +73,4 @@ Choose a **Desktop gallery** layout and a **Media shape**. Images of different s
 <img src="/images/docs/main-product-collapsible.png" alt="Two Collapsible tab blocks stacked as one ruled list, each expanding in place." width="577" height="137" />
 
 <SettingsTable section="main-product" block="collapsible" />
+<SettingsTable section="main-product" block="tier" />

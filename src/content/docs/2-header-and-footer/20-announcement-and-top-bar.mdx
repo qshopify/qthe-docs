@@ -1,7 +1,7 @@
 ---
 title: "Announcement bar and top bar"
 description: "Short store-wide messages above the header, rotating or side by side, and an optional top bar with social media icons and selectors."
-updated: 2026-10-09
+updated: 2026-10-15
 ---
 import SettingsTable from '../../../components/SettingsTable.astro';
 import Callout from '../../../components/Callout.astro';
@@ -15,6 +15,8 @@ Use the announcement bar for one to three short messages — a shipping threshol
 
 Keep each message under about 60 characters so it fits on one line on phones.
 
+Add a **Side note** to show short text at the left of the bar, such as a shipping promise, and a **Utility menu** to show links at the right, such as stockists and help. The utility menu replaces the counter. Both are hidden on phones.
+
 <img src="/images/docs/announcement-bar.png" alt="The announcement bar: rotating messages above the header." width="1425" height="40" />
 
 <SettingsTable section="announcement-bar" />
@@ -22,5 +24,7 @@ Keep each message under about 60 characters so it fits on one line on phones.
 ## Top bar
 
 The top bar is a slim strip above the header with a message on one side and social media icons, a currency selector and a language selector on the other. Add it from the **Header** group with **Add section**.
+
+Choose a **Utility menu** to show links at the right of the bar, before the selectors.
 
 <SettingsTable section="utility-bar" />

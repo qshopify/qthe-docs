@@ -1,0 +1,57 @@
+---
+title: "The note strip"
+description: "How QThe draws every product as its top, heart and base notes, where the strip appears, and where its colors and lengths come from."
+updated: 2026-10-15
+---
+import SettingsTable from '../../../components/SettingsTable.astro';
+import Callout from '../../../components/Callout.astro';
+
+The note strip is QThe's signature. It draws a product the way a fragrance unfolds: one colored band per stage — top, heart and base — with the longest-lasting note at the tip. The strip is drawn from your product data, so there's nothing to design per product.
+
+The strip is decorative. The same information is always printed as text nearby, so shoppers using a screen reader don't miss anything.
+
+## Where it appears
+
+- **Product cards** — down the left edge or across the top of every card, set by **Strip on product cards** in **Theme settings > Note strips**.
+- **Product page** — the **Note tiers** layout turns the page into the product's strip, with a rail that runs from the top note to the base note. See [Product page](/docs/products/product-page#note-tiers-layout).
+- **Note wall** — every product of a collection as a strip, in columns or in rows. See [Commerce sections](/docs/sections/commerce#note-wall).
+- **Cart** — on each line of the cart drawer and the cart page, in the cart notification, and as the free shipping meter in the cart drawer.
+- **Search and discovery** — predictive search, quick view, product recommendations and recently viewed.
+- **Sections** — the collection page's **Strips** view, the bundle builder, testimonials, shoppable image hotspots, slideshow indicators, video chapters, the countdown, image with text, gift card purchase and a note rule above the footer.
+- **Store pages** — the 404 page and the password page.
+
+## Where the colors come from
+
+QThe looks for strip colors in this order and uses the first source it finds:
+
+1. **Note metafields.** The product's `custom.notes_top`, `custom.notes_heart` and `custom.notes_base` metafields. Each one adds a band. A band's color is the `color` field of the matching entry in your **Note** metaobject — either the entry the metafield references, or, for a text metafield, the entry whose handle matches the text (*Bergamot* matches the entry `bergamot`). A note without a color uses the color scheme's strip color for that stage.
+2. **Color swatches.** When a product has no note metafields, the strip uses the swatch colors of its first option that has them — up to six bands of equal length.
+3. **Color scheme strip colors.** Without notes or swatches, the strip uses **Strip — top**, **Strip — heart** and **Strip — base** from the section's color scheme, in equal lengths.
+
+A product with only some note metafields shows a band for each one it has.
+
+## Where the band lengths come from
+
+For products with note metafields, each band's length comes from:
+
+1. The product's `custom.note_profile` metafield — three whole numbers for top, heart and base, such as `22,33,45`.
+2. Otherwise, **Default band lengths** in **Theme settings > Note strips**.
+
+The numbers are relative, so `2,3,4` and `20,30,40` draw the same strip. Strips built from swatches or scheme colors always use equal lengths.
+
+See [Product details from metafields and tags](/docs/products/product-data) for how to create these metafields.
+
+## Change how strips look
+
+| Setting | Where |
+| --- | --- |
+| **Strip tip** — pointed, long point or flat | Theme settings > Theme style |
+| **Strip width on cards** and **Strip width on product pages** | Theme settings > Theme style |
+| **Default band lengths** and **Strip on product cards** | Theme settings > Note strips |
+| **Strip — top**, **Strip — heart**, **Strip — base** | Theme settings > Colors, in each color scheme |
+
+Many sections also have their own switch to show or hide their strip, such as **Show note strips** on the cart page.
+
+<Callout type="tip" title="Start with a few notes">
+Create **Note** entries with a color for the notes you use most, then fill the three notes metafields on your bestsellers. Strips on every other product fall back to swatches or your scheme colors until you get to them.
+</Callout>

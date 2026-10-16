@@ -1,12 +1,14 @@
 ---
 title: "Note library"
 description: "An index of ingredients or notes built from a metaobject, with a detail page for each entry."
-updated: 2026-10-09
+updated: 2026-10-15
 ---
 import SettingsTable from '../../../components/SettingsTable.astro';
 import Callout from '../../../components/Callout.astro';
 
 The note library turns a list of ingredients — fragrance notes, botanicals, materials — into a searchable index with a page for each entry. It reads its content from a **metaobject** you create once in your admin.
+
+The same **Note** entries also color the [note strip](/docs/products/note-strip): a product's notes metafields point to entries, and each entry's **Color** becomes a band. Entries with a **Family** feed the family filters and family colors across the store. The strip, the product page tiers and search always read the `note` type, whatever you enter in **Metaobject type**.
 
 ## 1. Create the metaobject definition
 
@@ -46,5 +48,7 @@ Go to **Content > Metaobjects > Note** and add your entries.
 
 <SettingsTable section="note-library" />
 <img src="/images/docs/main-note.png" alt="A single note's detail page: its name, family and description." width="1440" height="1000" />
+
+On an entry's page, **Oils layout** lists the products in its **Products** field either as **Rows with strips** — each product with its note strip and three notes, this note in bold — or as **Product cards** in a row.
 
 <SettingsTable section="main-note" />

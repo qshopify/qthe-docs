@@ -1,7 +1,7 @@
 ---
 title: "Pages, contact and FAQ"
-description: "Standard pages with a sidebar menu, the contact page and a help center FAQ page."
-updated: 2026-10-09
+description: "Standard pages with a sidebar menu, the contact page, a help center FAQ page, and the customer account, 404 and password pages."
+updated: 2026-10-15
 ---
 import SettingsTable from '../../../components/SettingsTable.astro';
 import Callout from '../../../components/Callout.astro';
@@ -25,3 +25,21 @@ Assign the **contact** page template to your contact page. Messages arrive at yo
 ## FAQ page
 
 Assign the **faq** template to a page to get a full help center: search, topics and an accordion of questions. See the [FAQ section](/docs/sections/engagement#faq) for its settings.
+
+## Customer account page
+
+**Show next refill** puts the customer's latest subscription purchase first on the account page, with its note strip, plan and the extra link to manage it — for example a link to your subscription app's portal.
+
+<SettingsTable section="main-account" />
+
+## 404 page
+
+Choose a **Layout**: **Strip** shows a note strip that stops short, in the color scheme's strip colors, beside the message, a search field and a link back. **Numeral** shows the message beside a panel with a large *404*, or with your **Image** when you add one.
+
+<SettingsTable section="main-404" />
+
+## Password page
+
+While your store is password protected, the password page shows your brand, a message, a signup form and the password form. The **Outlined strips** layout draws your products' strips as outlines, waiting for opening day — one per product of the **Strips collection**, up to 12, or **Strips without a collection** outlines when no collection is set. **Centered** is a classic centered layout.
+
+<SettingsTable section="main-password" />

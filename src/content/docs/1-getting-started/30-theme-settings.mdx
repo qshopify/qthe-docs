@@ -1,12 +1,31 @@
 ---
 title: "Theme settings"
-description: "Store-wide settings: favicon, color schemes, fonts, page width, product cards, cart behavior and social media links."
-updated: 2026-10-09
+description: "Store-wide settings: favicon, color schemes, fonts, page width, product cards, theme style, note strips, cart behavior, social media links and the three presets."
+updated: 2026-10-15
 ---
 import SettingsTable from '../../../components/SettingsTable.astro';
 import Callout from '../../../components/Callout.astro';
 
 Theme settings apply to every page. Open them from the theme editor by clicking the **paintbrush icon** in the left sidebar.
+
+## Presets
+
+QThe comes in three presets. Each one is a full set of theme settings plus its own home, collection and product templates. Choose a preset when you add the theme from the Theme Store; after that, every setting below can be changed.
+
+| | QThe | Seventh Steep | Vesper |
+| --- | --- | --- | --- |
+| Palette | Dark brown text on pale green-gray, with sage, brown and amber strips | Pale text on dark green, with saffron buttons and strips | Plum text on blush, with terracotta buttons |
+| Heading font | Unbounded | Instrument Serif | Figtree, extra bold |
+| Body font | Figtree | DM Sans | Figtree |
+| **Strip tip** | Pointed | Long point | Flat |
+| **Strip width on cards** / **on product pages** | 14 px / 28 px | 10 px / 20 px | 12 px / 24 px |
+| **Button shape** | Square | Square | Pill |
+| **Heading size** | 100% | 110% | 95% |
+| **Default band lengths** | 22,33,45 | 40,40,20 | 22,33,45 |
+| **Strip on product cards** | Left edge | Top edge | Top edge |
+| Home page opens with | **Note wall** in columns | **Note wall** in rows, a ledger with price and quick add | **Featured product** in the Tier layout |
+
+All three use **Sentence case** buttons and the **Note tiers** product page layout. Every other setting — page width, product cards, cart — is the same in each preset.
 
 ## Logo and favicon
 
@@ -20,6 +39,8 @@ Your logo is set in the **Header** section (and, optionally, the **Footer** sect
 
 QThe uses **color schemes**: named sets of background, text, border, button and accent colors. Every section has a **Color scheme** setting, so you can alternate light and dark bands down a page while keeping every color pairing accessible.
 
+Each scheme also has three strip colors: **Strip — top**, **Strip — heart** and **Strip — base**. They color a [note strip](/docs/products/note-strip) when a product has no note colors and no color swatches, and they color the strips that aren't tied to a product, such as the 404 page and the countdown. Strip colors change per scheme, so a strip on a dark section can use lighter tones than one on a light section.
+
 <img src="/images/docs/theme-settings-colors.png" alt="Colors settings in the theme editor." width="572" height="1568" />
 
 <SettingsTable global="Colors" />
@@ -31,6 +52,8 @@ When you change a scheme, check the contrast between **Background** and **Text**
 ## Typography
 
 Choose one font for headings and one for body text from Shopify's font library. Bold and italic styles load automatically.
+
+The defaults are **Unbounded** (light) for headings and **Figtree** for body text. The Seventh Steep and Vesper presets use their own pairs — see [Presets](#presets). Use **Heading size** under **Theme style** to scale every heading at once.
 
 <img src="/images/docs/theme-settings-typography.png" alt="Typography settings in the theme editor." width="608" height="1504" />
 
@@ -49,6 +72,28 @@ These settings apply to every product card in the store — collection grids, fe
 <img src="/images/docs/theme-settings-product-cards.png" alt="Product cards settings in the theme editor." width="503" height="1568" />
 
 <SettingsTable global="Product cards" />
+
+## Theme style
+
+Theme style changes the feel of every page at once: the shape of the note strip, the shape and case of buttons, and the size of headings. The note strip stays visible in every combination.
+
+- **Strip tip** — how the longest-lasting end of every strip finishes: **Pointed**, **Long point** or **Flat**.
+- **Strip width on cards** — the thickness of the strip along product cards, from 6 to 24 px.
+- **Strip width on product pages** — the thickness of the rail that runs down the product page in the **Note tiers** layout, from 12 to 40 px.
+- **Button shape** — **Square**, **Soft corners** or **Pill**.
+- **Button text** — **Sentence case** or **Uppercase**.
+- **Heading size** — scales every heading from 80% to 120% of the default.
+
+<SettingsTable global="Theme style" />
+
+## Note strips
+
+These settings control the [note strip](/docs/products/note-strip) across the store.
+
+- **Default band lengths** — the relative length of the top, heart and base bands, as three numbers separated by commas. The default `22,33,45` makes the base band, which lasts longest, the longest. A product's `custom.note_profile` metafield overrides this for that product.
+- **Strip on product cards** — draw the strip down the **Left edge** of each card, across the **Top edge**, or choose **None** to hide it on cards. Strips in the cart, search and other sections aren't affected.
+
+<SettingsTable global="Note strips" />
 
 ## Cart
 

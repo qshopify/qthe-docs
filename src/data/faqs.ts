@@ -32,6 +32,14 @@ export const FAQS: FaqGroup[] = [
         a: 'In <b>Theme settings</b>, edit the <b>color schemes</b> and pick a heading and body font. Every section has a <b>Color scheme</b> setting, so a change to a scheme updates every section that uses it. See <a href="/docs/getting-started/theme-settings">Theme settings</a>.',
       },
       {
+        q: 'What’s the difference between the QThe, Seventh Steep and Vesper presets?',
+        a: 'Each preset has its own color schemes, fonts, theme style and home, collection and product templates. QThe opens with a note wall in columns, Seventh Steep with a note wall in rows on a dark green palette, and Vesper with a featured product on a blush palette with pill buttons. See <a href="/docs/getting-started/theme-settings#presets">Presets</a>.',
+      },
+      {
+        q: 'Which fonts does QThe use, and can I change them?',
+        a: 'By default, Unbounded for headings and Figtree for body text, both from Shopify’s font library. Seventh Steep and Vesper use their own pairs. Change them in <b>Theme settings &gt; Typography</b>, and scale every heading with <b>Heading size</b> in <b>Theme settings &gt; Theme style</b>.',
+      },
+      {
         q: 'Why don’t I see the newsletter form in the footer?',
         a: 'QThe shows one signup form per page. When a page has a <b>Newsletter</b> section, the footer’s form hides itself on that page.',
       },
@@ -42,6 +50,31 @@ export const FAQS: FaqGroup[] = [
       {
         q: 'How do I add a badge such as “Bestseller” to a product card?',
         a: 'Add a product tag starting with <code>badge:</code>, for example <code>badge:Bestseller</code>. Sale badges appear automatically when a product has a compare-at price.',
+      },
+    ],
+  },
+  {
+    topic: 'The note strip',
+    items: [
+      {
+        q: 'What is the note strip?',
+        a: 'A colored strip that draws each product as its top, heart and base notes, with the longest-lasting note at the tip. It appears on product cards, the product page, the cart, search and many sections. See <a href="/docs/products/note-strip">The note strip</a>.',
+      },
+      {
+        q: 'Where do the strip colors come from?',
+        a: 'First from the product’s <code>custom.notes_top</code>, <code>custom.notes_heart</code> and <code>custom.notes_base</code> metafields and the color of each matching <b>Note</b> entry. Without notes, from the product’s color swatches. Without either, from the three strip colors in the section’s color scheme.',
+      },
+      {
+        q: 'Which metafields do I need to set up?',
+        a: 'None are required. For strips in your own note colors, create the three notes metafields as single line text or as a reference to the <b>Note</b> metaobject, with a <code>color</code> field on each entry. Add <code>custom.note_profile</code> to set band lengths per product. See <a href="/docs/products/product-data">Product details from metafields and tags</a>.',
+      },
+      {
+        q: 'Why are all my strips the same colors?',
+        a: 'Products without notes metafields or color swatches use the color scheme’s <b>Strip — top</b>, <b>Strip — heart</b> and <b>Strip — base</b> colors. Edit them in <b>Theme settings &gt; Colors</b>, or add notes to your products. If your products do have notes but their strips still look alike, check that each <b>Note</b> entry has its own color rather than one color per family.',
+      },
+      {
+        q: 'Can I hide the strip on product cards?',
+        a: 'Yes. Set <b>Strip on product cards</b> to <b>None</b> in <b>Theme settings &gt; Note strips</b>. Most sections that show a strip also have their own setting to hide it.',
       },
     ],
   },
@@ -76,6 +109,10 @@ export const FAQS: FaqGroup[] = [
       {
         q: 'Will I lose my changes when I update the theme?',
         a: 'No — settings, sections and content carry over. Code edits don’t, so keep custom code in the <b>Custom liquid</b> section or block where possible. See <a href="/docs/support/updating">Updating QThe</a>.',
+      },
+      {
+        q: 'What changes when I update to 1.1.0?',
+        a: 'Version 1.1.0 adds the note strip, the Note tiers product layout, the Note wall section, Theme style and Note strips settings, and new section layouts. Your settings and content carry over, and every earlier layout is still available. Preview your pages before publishing, since some sections have new defaults. See the <a href="/docs/support/release-notes">release notes</a>.',
       },
       {
         q: 'Can you customize the theme for me?',

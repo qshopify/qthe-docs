@@ -6,9 +6,22 @@ updated: 2026-10-10
 import SettingsTable from '../../../components/SettingsTable.astro';
 import Callout from '../../../components/Callout.astro';
 
+## Note wall
+
+Every product of a collection drawn as its [note strip](/docs/products/note-strip), like perfumer's blotters pinned to a board. Choose a **Collection** and how many **Products to show**, then a **Layout**:
+
+- **Columns** — vertical strips side by side with the product names below. It works best as the first section on the home page.
+- **Rows** — a ledger with one product per row, its strip read from left to right, with price and quick add.
+
+**Show family filters** adds a row of family chips that filter the wall. The families come from the `family` field of the products' **Note** entries. Under **Text**, add an eyebrow, heading, intro, a button and a link; set **Heading level** to **H1** when the wall is the first section on the page.
+
+<SettingsTable section="note-wall" />
+
 ## Featured product
 
 Sell one product anywhere: gallery, price, variant picker, buy buttons, Shop Pay Installments and accelerated checkout. Images, videos and 3D models all play here. Add **Custom liquid** or app blocks under the form.
+
+The **Tier** layout reuses the top tier of the product page's **Note tiers** layout: the product's note strip as a rail on the left, a large title, its top, heart and base notes, the buy button and one image. It's the layout for new Featured product sections.
 
 <SettingsTable section="featured-product" />
 
@@ -24,6 +37,8 @@ A grid or a carousel of products from one collection. **Card style** switches be
 
 Several collections behind tabs — *Bestsellers*, *New*, *Gifts* — so shoppers can browse without leaving the page. Add one **Tab** block per collection.
 
+Each tab has a **Color**, used for the active tab's underline in the stacked layout and for a small tick in the split layout. Leave it blank to use the tab collection's `custom.color` metafield, then the family color that matches the tab's label, or else the color scheme's strip colors in turn.
+
 <img src="/images/docs/collection-tabs.png" alt="The Collection tabs section: mood chips that switch which collection's products show." width="1425" height="797" />
 
 <SettingsTable section="collection-tabs" />
@@ -31,6 +46,8 @@ Several collections behind tabs — *Bestsellers*, *New*, *Gifts* — so shopper
 ## Collection list
 
 Collections as image tiles or circles. Without an image, a collection shows its first product's image.
+
+The **Bands** style shows each collection as a tall band in its family color, as tall as its product count compared with the largest collection. A band's color is the block's **Color**; when that's blank, it's the collection's own `custom.color` metafield, then the family color that matches the collection's title, or else the color scheme's strip colors in turn. Bands is the style for new Collection list sections.
 
 <img src="/images/docs/collection-list.png" alt="The Collection list section: a grid of collection tiles." width="1425" height="739" />
 
@@ -40,6 +57,8 @@ Collections as image tiles or circles. Without an image, a collection shows its 
 
 A lifestyle photo with hotspots. Each **Hotspot** block links a product to a point on the image; set its **Horizontal position** and **Vertical position** in percent.
 
+With **Product card** set to **In-this-room list, cards over image**, a list beside the image shows every hotspot product with its note strip and price, and an *Add all* button; choosing a hotspot opens its card over the image. **Hotspot marker** draws each hotspot as a short **Note strip of the product** or as a **Dot**.
+
 <img src="/images/docs/shoppable-image.png" alt="The Shoppable image section: a room photo with hotspot dots that open a product card." width="1425" height="848" />
 
 <SettingsTable section="shoppable-image" />
@@ -47,6 +66,8 @@ A lifestyle photo with hotspots. Each **Hotspot** block links a product to a poi
 ## Bundle builder
 
 Shoppers fill a set from a collection and add it to the cart in one step. The **Bundle discount** setting is display-only: create a matching automatic discount in **Discounts** so the price actually changes at checkout.
+
+Choose a **Style**: **Strips** shows tall slots that fill with each pick's note strip, beside the products to choose from, each with its strip down the edge. **Cards** shows product cards beside a summary panel.
 
 <img src="/images/docs/bundle-builder.png" alt="The Bundle builder section: pick products to assemble a set, with a running total." width="1425" height="717" />
 
@@ -56,6 +77,8 @@ Shoppers fill a set from a collection and add it to the cart in one step. The **
 
 Sell your gift card from any page, with amount buttons and the option to send it to a recipient by email on a chosen date.
 
+**Show note strip** draws a strip down the gift card's edge. Pick a **Strip product** to use its notes; without one, the strip uses the card's color scheme strip colors.
+
 <img src="/images/docs/gift-card-purchase.png" alt="The Gift card purchase section: denomination picker and a recipient form." width="1425" height="600" />
 
 <SettingsTable section="gift-card-purchase" />
@@ -64,6 +87,8 @@ Sell your gift card from any page, with amount buttons and the option to send it
 
 Products the shopper looked at recently, stored in their own browser. Choose a fallback **Collection** for first-time visitors.
 
+**Card style** sets how each product shows. **Line** is a single scrolling line of small thumbnails, each with a thin note strip under it. It's the style for new Recently viewed sections. The other styles match the product recommendations cards or show a compact strip of image, title and price.
+
 <img src="/images/docs/recently-viewed.png" alt="The Recently viewed section: a row of product cards from the shopper's own browsing history." width="1410" height="616" />
 
 <SettingsTable section="recently-viewed" />
@@ -71,6 +96,8 @@ Products the shopper looked at recently, stored in their own browser. Choose a f
 ## Blog posts
 
 Your latest articles, or articles you pick, as cards.
+
+Choose a **Layout**: **Lead article and list** shows the newest article large, with the next ones listed under a heavy rule. **Cards in a row** shows each article as a card, swiping on phones.
 
 <img src="/images/docs/featured-blog.png" alt="The Blog posts section: a row of article cards from one blog." width="1425" height="668" />
 

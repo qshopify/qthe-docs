@@ -1,7 +1,7 @@
 ---
 title: "Product details from metafields and tags"
-description: "Card labels, notes lines, scent notes, ratings and badges — filled from your product data, not from theme settings."
-updated: 2026-10-09
+description: "Card labels, notes lines, scent notes, note strips, ratings and badges — filled from your product, collection and article data, not from theme settings."
+updated: 2026-10-15
 ---
 import SettingsTable from '../../../components/SettingsTable.astro';
 import Callout from '../../../components/Callout.astro';
@@ -14,10 +14,55 @@ QThe reads a few optional product fields so that the same information shows cons
 | --- | --- | --- |
 | `custom.kicker` | Single line text | Small label at the top-left of the product card, for example *N° 014* |
 | `custom.subtitle` | Single line text | The notes line under the product title, for example *Fig leaf · Smoked cedar · Amber* |
-| `custom.notes_top`, `custom.notes_heart`, `custom.notes_base` | Single line text | The three tiers of the **Scent notes** block |
+| `custom.notes_top`, `custom.notes_heart`, `custom.notes_base` | Single line text, or Metaobject (Note) | The bands of the [note strip](/docs/products/note-strip) and the tier names in the **Note tiers** layout. Text values also fill the three tiers of the **Scent notes** block. |
+| `custom.note_profile` | List of integers, or Single line text such as `22,33,45` | The relative lengths of the top, heart and base bands of the strip |
+| `custom.contents` | List of products | What's inside a set or bundle: the **What's inside** block on the product page lists these products with their strips |
 | `reviews.rating` | Rating | Stars on cards and the product page. Review apps fill this automatically. |
 
 If a product has no notes metafields, the **Scent notes** block falls back to the three parts of `custom.subtitle` separated by *·*. Without either, the block hides itself.
+
+## Notes metafields
+
+Each of the three notes metafields can be one of two types:
+
+- **Single line text** — the note's name, for example *Bergamot*. QThe looks for an entry in your **Note** metaobject whose handle matches the text (`bergamot`) and uses its color and summary when it finds one.
+- **Metaobject**, referencing the **Note** definition — pick the entry directly. QThe reads these fields from it:
+
+| Field | Key | Used for |
+| --- | --- | --- |
+| Name | `name` | The tier heading in the **Note tiers** layout |
+| Color | `color` | The note's band in the strip and its tier rail |
+| Family | `family` | The **Note wall** family filters. A collection, tab or filter value named after a family takes the color of that family's notes, unless the collection has its own `custom.color`. |
+| Summary | `summary` | The tier text in the **Note tiers** layout, when **Show note summary** is on |
+
+The **Note** metaobject is the same one the [note library](/docs/pages-and-blog/note-library) uses, so one entry serves the library, the strip and the product page.
+
+<Callout type="tip" title="Give every note its own color">
+A strip is easiest to read when each note has its own color, not one color per family. If all your woods share one brown, a product with cedar in the heart and sandalwood in the base draws two identical bands. Keep notes of a family close in hue, for example cedar a mid brown and oud almost black, so the family still reads as one.
+</Callout>
+
+### Recommended setup
+
+This is how the QThe demo store is set up, and the quickest way to get strips on every product:
+
+1. In **Settings > Custom data > Metaobjects**, open **Note** (the note library creates it) and give each entry a **Color** and a **Family**.
+2. In **Settings > Custom data > Products**, add `custom.notes_top`, `custom.notes_heart` and `custom.notes_base` as **Metaobject** definitions that reference **Note**, and `custom.note_profile` as **Single line text**.
+3. On each product, pick its three notes and, if you like, type its band lengths, such as `24,32,44` for a scent that lasts longest in the base.
+4. Add `custom.subtitle` with the three note names, such as *Bergamot, cedar, amber*, so cards and rows show them as text too.
+
+## Band lengths
+
+`custom.note_profile` sets how long each band of the strip is, in the order top, heart, base. Use a **List of integers** metafield with three values, or a **Single line text** metafield like `22,33,45`. The numbers are relative. Without this metafield, the strip uses **Default band lengths** from **Theme settings > Note strips**.
+
+## Collection, article and page metafields
+
+| Owner | Metafield | Type | Where it shows |
+| --- | --- | --- | --- |
+| Collection | `custom.color` | Color | The collection's color wherever it stands for a family: its band in **Collection list** (Bands style), its tab in **Collection tabs**, its **Collection banner**, its filter chip on collection pages and its tile in **Mobile menu family tiles**. Without it, QThe uses the color of the notes in the family of the same name, then the color scheme's strip colors. |
+| Article | `custom.product` | Product, or List of products | The product the article is about: the **In this article** list and note strip rail on the article page, and the product link in the **Rows** blog layout. The rows layout shows the first product of a list. |
+| Page | `custom.intro` | Multi-line text | A short intro under the page title. It replaces the section's **Intro** setting on that page only. |
+
+Create collection metafields in **Settings > Custom data > Collections**, article metafields in **Settings > Custom data > Blog posts** and page metafields in **Settings > Custom data > Pages**.
 
 ## Badges
 
